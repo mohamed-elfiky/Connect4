@@ -1,4 +1,4 @@
-#include "connect4.h"
+#include "board.h"
 
 class game{
     

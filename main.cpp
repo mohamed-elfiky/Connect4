@@ -1,4 +1,4 @@
-#include"connect4.h"
+#include"game.h"
 
 int main(){
 
