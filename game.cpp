@@ -1,10 +1,13 @@
 #include "game.h"
-
-
+/*****************************************************************************************
+                               ALL THE LOGIC OF AI WILL BE HERE 
+******************************************************************************************/
+ // getting input from humman player. 
  void game::get_player_move(){
     int col;
     cout<< "enter column:";
     cin >> col;
+  // check if the input is valid.
     while(!board.is_valid(col)){
         cout<<"invlaid move"<<endl;
         cout<< "enter column:";
@@ -14,11 +17,12 @@
 }
 
 void game::get_ai_move(){
+    // to be implemented
     board.add_piece(1, AI);
 }
 
 
-
+// game loop.
 void game::start_game(){
     while(true){
         //this->get_ai_move();
