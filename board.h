@@ -22,7 +22,7 @@ class Board{
         void display_board();                                   //print the board  
         void add_piece(int col, int);                                 //add piece to a column                            
         vector<Board> get_children();                           //get all possible moves from this state  
-        bool win_state();
+        int  win_state();
         bool is_terminal();
         bool is_valid(int);
         

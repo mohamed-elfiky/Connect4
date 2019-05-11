@@ -1,4 +1,3 @@
-
 #include "board.h"
 
 
@@ -38,16 +37,32 @@ void Board::add_piece(int col, int player){
 }
 
 
-bool Board::win_state(){
+int Board::win_state(){
     // check horizontal
     for(int i = 0 ; i < row ; i++ ){
         int count = 0 ;
-        for(int j = 0 ; j < col ; j++){
-             if()
-                       
-            
+        for(int j = 0 ; j < col-1 ; j++){
+             if(this->game_board[i][j]!=this->game_board[i][j+1]){count = 0 ;}
+             count ++ ;
         }
+        if(count == 4) return AI;
+        else if(count == 8) return Player;    
     }
+    // check vertical 
+    for(int i = 0 ; i < col ; i++ ){
+        int count = 0 ;
+        for(int j = 0 ; j < row-1 ; j++){
+             if(this->game_board[i][j]!=this->game_board[i][j+1]){count = 0 ;}
+             count ++ ;
+        }
+        if(count == 4) return AI;
+        else if(count == 8) return Player;    
+    }
+    // check diagonally
+    
+    
+    
+    return -1;
 }
 
 
