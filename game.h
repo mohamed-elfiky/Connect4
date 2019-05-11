@@ -9,6 +9,7 @@ class game{
     
     /*AI*/
     public:
+    game(){};
     int minmax();
     
     
@@ -17,9 +18,10 @@ class game{
     
     /*Game*/
     public:
-    void satrt_game();               //contains the game loop
+    void start_game();               //contains the game loop
     void get_player_move();
     void get_ai_move();
+    bool game_over();
 
 };
 
