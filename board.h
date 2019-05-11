@@ -14,19 +14,27 @@ class Board{
     public:
         int col = 7 ;
         int row = 6 ;
-        vector<vector<int> >game_board{{0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0}};
+        //intialize teh board.
+        vector<vector<int> >game_board{{0,0,0,0,0,0,0,0},
+                                       {0,0,0,0,0,0,0,0},
+                                       {0,0,0,0,0,0,0,0},
+                                       {0,0,0,0,0,0,0,0},
+                                       {0,0,0,0,0,0,0,0},
+                                       {0,0,0,0,0,0,0,0}};
 
     public:
-        int get_score();                                        //evalute the board 
-        void display_board();                                   //print the board  
-        void add_piece(int col, int);                                 //add piece to a column                            
-        vector<Board> get_children();                           //get all possible moves from this state  
+        //evalute the board
+        int get_score();
+        //print the board 
+        void display_board();
+        //add piece to a column  
+        void add_piece(int col, int);                                                           
+        vector<Board> get_children();   
+        //get all possible moves from this state
         bool  win_state();
         bool is_terminal();
         bool is_valid(int);
-        
-
+    
 
 }; 
 
