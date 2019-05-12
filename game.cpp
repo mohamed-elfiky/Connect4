@@ -34,7 +34,7 @@ void game::start_game(){
 
         this->board.display_board();
 
-        //if(this->board.win_state()){cout<<"player wins";break;}
+        if(this->board.win_state()){cout<<"player wins";break;}
         
 
     }

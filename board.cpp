@@ -3,7 +3,7 @@
 
 
 void Board::display_board(){
-    for(int i = 0 ; i <row ; i++){
+    for(int i = row-1 ; i >=0 ; i--){
         for(int j = 0 ; j < col ; j++){
             
             cout<<this->game_board[i][j]<<" ";
@@ -68,9 +68,50 @@ bool Board::win_state(){
        // if(count == 3) return true;
        // else if(count == 6) return true;
     }
-    // check diagonally
-    //for(int i = 0 ; i< col ; )    
+    // check diagonal downwards
+    for(int j = 0 ; j< col -3 ; j++)
+    	for(int i = 3 ; i < row  ; i++ ){
+    		if(
+    		   this->game_board[i][j]==
+    		   this->game_board[i-1][j+1]
+									 &&
+			   this->game_board[i-1][j+1]
+									 ==
+			   this->game_board[i-2][j+2]
+									 &&
+			   this->game_board[i-2][j+2]==
+			   this->game_board[i-3][j+3]
+									 &&
+			   this->game_board[i-3][j+3]!=0
+									 )
+    			return true;
+    	}
+
+    // check diagonal downwards
+    for(int j = 0 ; j< col -3 ; j++)
+    	for(int i = 0 ; i < row -3  ; i++ ){
+    		if(
+    		   this->game_board[i][j]==
+    		   this->game_board[i+1][j+1]
+									 &&
+			   this->game_board[i+1][j+1]
+									 ==
+			   this->game_board[i+2][j+2]
+									 &&
+			   this->game_board[i+2][j+2]==
+			   this->game_board[i+3][j+3]
+									 &&
+			   this->game_board[i+3][j+3]!=0
+									 )
+    			return true;
+    		}
+
+
+
+
+
     
+
     
     return false;
 }
