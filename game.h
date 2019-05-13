@@ -12,7 +12,7 @@ class game{
     /*AI*/
     public:
     game(){};
-    int minmax();
+    val_col minmax(Board , int, int, int, int );
     
     
 

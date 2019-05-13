@@ -193,6 +193,18 @@ vector<int>Board::get_children(){
 }
 
 
+Board::Board(const Board & board){
+	col = board.col;
+	row = board.row;
+	for(int i = 0 ; i < row ; i++){
+		for(int j= 0 ; j < col ;j++ ){
+			game_board[i][j] = board.game_board[i][j];
+		}
+	}
+}
+
+
+
 
 
 
