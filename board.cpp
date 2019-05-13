@@ -87,7 +87,7 @@ bool Board::win_state(){
     			return true;
     	}
 
-    // check diagonal downwards
+    // check diagonal upwards
     for(int j = 0 ; j< col -3 ; j++)
     	for(int i = 0 ; i < row -3  ; i++ ){
     		if(
@@ -125,6 +125,72 @@ bool Board::win_state(){
 
 
 
+
+int Board::get_score( ){
+	int score = 0 ;
+
+	// check horizontal
+    for(int i = 0 ; i < row ; i++ ){
+        int count = 0 ;
+        for(int j = 0 ; j < col-1 ; j++){
+             // check the current cell and the next cell.
+             if(this->game_board[i][j]!=this->game_board[i][j+1]){count = 0 ;}
+             count+=this->game_board[i][j] ;
+             //3 not 4 ---> we did not add the last cell.
+             if(count == 3) score += 100;
+             else if(count==2) score +=5;
+             else if(count == 1) score +=2;
+             //else if(count == 6)  score -=100;
+             else if(count == 4) score -=5 ;
+        }
+
+
+
+    }
+
+    // check vertically
+        for(int i = 0 ; i < col ; i++ ){
+            int count = 0 ;
+            for(int j = 0 ; j < row-1 ; j++){
+                 if(this->game_board[j][i]!=this->game_board[j+1][i]){count = 0 ;}
+                 count+=this->game_board[j][i] ;
+                 //3 not 4 ---> we did not add the last cell.
+                 if(count == 3) score += 100;
+                 else if(count==2) score +=5;
+                 else if(count == 1) score +=2;
+                 //else if(count == 6)  score -=100;
+                 else if(count == 4) score -=5 ;
+            }
+           // if(count == 3) return true;
+           // else if(count == 6) return true;
+        }
+
+    // check diagonally
+
+
+    return score;
+
+}
+
+
+
+bool Board::is_terminal(){
+	if(this->win_state()  || (this->get_children()).size()>0)
+		return true;
+
+	return false;
+}
+
+
+vector<int>Board::get_children(){
+	vector<int>valid_locs;
+	for(int i = 0 ; i< col ; i++){
+		if(is_valid(col)){
+			valid_locs.push_back(i);
+		}
+	}
+	return valid_locs;
+}
 
 
 

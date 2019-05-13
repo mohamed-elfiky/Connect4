@@ -22,14 +22,16 @@ class Board{
                                        {0,0,0,0,0,0,0,0},
                                        {0,0,0,0,0,0,0,0}};
 
+        int turn;
     public:
+
         //evalute the board
         int get_score();
         //print the board 
         void display_board();
         //add piece to a column  
         void add_piece(int col, int);                                                           
-        vector<Board> get_children();   
+        vector<int> get_children();
         //get all possible moves from this state
         bool  win_state();
         bool is_terminal();
