@@ -9,7 +9,12 @@ using namespace std;
 
 #define AI 1 
 #define Player 0
- 
+
+typedef struct{
+	int value;
+	int col;
+}val_col;
+
 class Board{
     public:
         int col = 7 ;
@@ -22,7 +27,7 @@ class Board{
                                        {0,0,0,0,0,0,0,0},
                                        {0,0,0,0,0,0,0,0}};
 
-        int turn;
+       // int turn;
     public:
 
         //evalute the board
@@ -36,7 +41,7 @@ class Board{
         bool  win_state();
         bool is_terminal();
         bool is_valid(int);
-    
+        Board(const Board &);
 
 }; 
 
