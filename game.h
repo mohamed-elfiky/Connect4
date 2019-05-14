@@ -6,13 +6,13 @@ class game{
     
     public:
     Board board ;
-    
+    int level = 0;
     
     
     /*AI*/
     public:
     game(){};
-    int minmax(Board , int, int, int, int );
+    val_col minmax(Board , int, int, int, int );
     int evaluate_move();
     
 
